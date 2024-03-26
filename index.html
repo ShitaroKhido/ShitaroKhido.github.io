@@ -4,50 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khid</title>
+    <title>ShitaroKhido</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,
+            %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12 1l2.305 7.086h7.44L15.65 11.49l2.307 7.086-6.047-4.394-6.047 4.394 2.308-7.086L1.254 8.086h7.44L12 1zm0 3.408L10.413 7.75 6.75 7.75l3.573 2.6-1.36 4.185 3.58-2.604 3.583 2.604-1.36-4.185 3.573-2.6-3.662-.034zm0 14.792l-3.583-2.606 1.36-4.183-3.573 2.6-3.573-2.6 1.36 4.183-3.583 2.606h4.672l2.308 7.086 2.308-7.086h4.67z'/%3E%3C/svg%3E">
 </head>
 
 <body class="bg-gray-100">
-    <div class="container mx-auto px-4 py-8">
-        <!-- Navbar -->
-        <nav class="flex items-center justify-between mx-auto">
-            <!-- Logo -->
-            <div class="flex-shrink-0">
-                <a href="#" class="text-3xl text-gray-800 font-bold">ShitaroKhido</a>
-            </div>
-        </nav>
-        <div class="h-screen mt-8 flex justify-center items-center">
-            <div class="text-center mt-4">
-                <blockquote class="text-gray-700 italic">
-                    "Logic will get you from A to B. Imagination will take you everywhere." <br>
-                    - Albert Einstein
-                </blockquote>
-            </div>
+    <!-- Navigation Start -->
+    <nav class="fixed w-full p-6 px-12 flex justify-between items-center gap-8">
+        <p class="font-bold text-3xl text-gray-600 flex">
+            <span>
+                ShitaroKhido
+            </span>
+        </p>
+        <div class="flex justify-center items-center gap-8">
+            <a href="#" class="duration-200 hover:scale-105 nav-link">Home</a>
+            <a href="#" class="duration-200 hover:scale-105 nav-link">Abouts</a>
+            <a href="#" class="duration-200 hover:scale-105 nav-link">Contacts</a>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+
+    <div class="container mx-auto px-4 h-screen flex justify-between flex-col">
+        <div class="flex-1 h-screen mt-10">
+            <blockquote class="h-screen italic text-gray-600 text-center flex justify-center items-center">
+                "Logic will get you from A to B. Imagination will take you everywhere." <br>
+                - Albert Einstein
+            </blockquote>
         </div>
 
+        <!-- Footer Start -->
+        <footer class="flex-shrink-0 bg-gray-100 p-6 text-gray-800">
+            <div class="container mx-auto flex items-center justify-between px-4 md:flex-row flex-col">
+                <div class="flex-1 mb-4 md:mb-0">
+                    <h2 class="font-bold text-lg mb-2 text-gray-600">ShitaroKhido</h2>
+                    <p class="text-sm">There is nothing more beautiful than a perfectly empty blank page, waiting
+                        patiently for the strokes of creativity to breathe life into its pristine surface.</p>
+                </div>
+
+                <div class="flex-2 text-sm text-gray-600">
+                    <p class="mb-1">Contact Me:</p>
+                    <p>Duan Penh, Phnom Penh, Cambodia</p>
+                    <p>Phone: +855xxxxxxxx</p>
+                    <p>Email: kxxxxxxxxxx@gmail.com</p>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
     </div>
-
-    <footer class="bg-gray-100 text-gray-800 py-6 shadow-2xl">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
-            <!-- Left section: Logo and Site Description -->
-            <div class="flex-1 mb-4 md:mb-0">
-                <h2 class="text-lg font-bold mb-2">ShitaroKhido</h2>
-                <p class="text-sm">There is nothing more beautiful than a perfectly empty blank page, waiting patiently
-                    for
-                    the strokes of creativity to breathe life into its pristine surface.</p>
-            </div>
-
-            <!-- Right section: Contact Information -->
-            <div class="flex-2 text-sm">
-                <p class="mb-1">Contact Me:</p>
-                <p>Duan Penh, Phnom Penh, Cambodia</p>
-                <p>Phone: +855xxxxxxxx</p>
-                <p>Email: kxxxxxxxxxx@gmail.com</p>
-            </div>
-        </div>
-    </footer>
 </body>
 
 </html>
