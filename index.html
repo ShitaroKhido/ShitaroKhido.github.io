@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Page</title>
-    <style>
-        body {
-            font-family: "Arial", sans-serif; /* Modern font family */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100vh; /* Make the body take up the full height of the viewport */
-            background-color: #f0f0f0; /* Light gray background color */
-        }
-
-        .hello-text {
-            font-size: 3rem; /* Adjust font size as needed */
-            color: #333; /* Dark gray text color */
-        }
-    </style>
+    <title>Khid</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-    <div class="hello-text">Hello, it's me Khid</div>
-</body>
-</html>
 
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Navbar -->
+        <nav class="flex items-center justify-between mx-auto">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="#" class="text-3xl text-gray-800 font-bold">ShitaroKhido</a>
+            </div>
+        </nav>
+        <div class="h-screen mt-8 flex justify-center items-center">
+            <div class="text-center mt-4">
+                <blockquote class="text-gray-700 italic">
+                    "Logic will get you from A to B. Imagination will take you everywhere." <br>
+                    - Albert Einstein
+                </blockquote>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-gray-100 text-gray-800 py-6 shadow-2xl">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+            <!-- Left section: Logo and Site Description -->
+            <div class="flex-1 mb-4 md:mb-0">
+                <h2 class="text-lg font-bold mb-2">ShitaroKhido</h2>
+                <p class="text-sm">There is nothing more beautiful than a perfectly empty blank page, waiting patiently
+                    for
+                    the strokes of creativity to breathe life into its pristine surface.</p>
+            </div>
+
+            <!-- Right section: Contact Information -->
+            <div class="flex-2 text-sm">
+                <p class="mb-1">Contact Me:</p>
+                <p>Duan Penh, Phnom Penh, Cambodia</p>
+                <p>Phone: +855xxxxxxxx</p>
+                <p>Email: kxxxxxxxxxx@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
