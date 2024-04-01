@@ -135,9 +135,10 @@ body {
 }
 .section blockquote {
   font-style: italic;
-  font-size: 2em;
+  font-size: 1em;
   text-align: center;
   padding: 4em;
+  opacity: 0.5;
 }
 
 .header {
