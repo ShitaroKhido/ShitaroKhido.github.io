@@ -1,0 +1,70 @@
+{
+  "en": {
+    "site": {
+      "title": "The Khid Kraft",
+      "logo": "The Khid Kraft",
+      "hero": {
+        "title": "Portfolio of a Developer",
+        "subtitle": "Showcasing projects and skills with a classic touch.",
+        "button": "View All Articles"
+      },
+      "sections": {
+        "projects": "Featured Stories",
+        "skills": "Editor's Toolkit",
+        "contact": "Connect with the Author"
+      },
+      "contactForm": {
+        "namePlaceholder": "Your Name",
+        "emailPlaceholder": "Your Email",
+        "messagePlaceholder": "Your Message",
+        "button": "Send Dispatch"
+      },
+      "footer": {
+        "copyright": "&copy; 2025 The Khid Kraft. All Rights Reserved."
+      },
+      "detailsPage": {
+        "goBack": "Go Back",
+        "comments": "Comments",
+        "commentForm": {
+          "namePlaceholder": "Your Name",
+          "commentPlaceholder": "Leave a comment",
+          "button": "Submit Comment"
+        }
+      }
+    }
+  },
+  "es": {
+    "site": {
+      "title": "El Arte de Khid",
+      "logo": "El Arte de Khid",
+      "hero": {
+        "title": "Portafolio de un Desarrollador",
+        "subtitle": "Mostrando proyectos y habilidades con un toque clásico.",
+        "button": "Ver Todos los Artículos"
+      },
+      "sections": {
+        "projects": "Historias Destacadas",
+        "skills": "Herramientas del Editor",
+        "contact": "Contacta con el Autor"
+      },
+      "contactForm": {
+        "namePlaceholder": "Tu Nombre",
+        "emailPlaceholder": "Tu Correo Electrónico",
+        "messagePlaceholder": "Tu Mensaje",
+        "button": "Enviar Despacho"
+      },
+      "footer": {
+        "copyright": "&copy; 2025 El Arte de Khid. Todos los derechos reservados."
+      },
+      "detailsPage": {
+        "goBack": "Volver",
+        "comments": "Comentarios",
+        "commentForm": {
+          "namePlaceholder": "Tu Nombre",
+          "commentPlaceholder": "Deja un comentario",
+          "button": "Enviar Comentario"
+        }
+      }
+    }
+  }
+}

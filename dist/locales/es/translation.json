@@ -1,0 +1,54 @@
+{
+  "site": {
+    "title": "El Arte de Khid",
+    "logo": "El Arte de Khid",
+    "page": {
+      "title": "Mi Portafolio",
+      "detailsTitle": "Detalles del Proyecto"
+    },
+    "nav": {
+      "home": "Inicio",
+      "about": "Sobre mí",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    },
+    "hero": {
+      "title": "Portafolio de un Desarrollador",
+      "subtitle": "Un patio de recreo digital para mis creaciones y experimentos,",
+      "button": "Ver Todos los Artículos"
+    },
+    "sections": {
+      "projects": "Historias Destacadas",
+      "skills": "Herramientas del Editor",
+      "contact": "Contacta con el Autor",
+      "allTechnologies": "Todas las Tecnologías",
+      "about": "Sobre el autor",
+      "searchPlaceholder": "Buscar historias..."
+    },
+    "aboutSection": {
+      "paragraph": "Como desarrollador, encuentro alegría en crear cosas con código. Este portafolio es menos una exhibición formal y más un patio de recreo personal para mis proyectos. Los construí por diversión y para aprender cosas nuevas. Espero que disfrutes explorándolos tanto como yo disfruté construyéndolos."
+    },
+    "contactForm": {
+      "namePlaceholder": "Tu Nombre",
+      "emailPlaceholder": "Tu Correo Electrónico",
+      "messagePlaceholder": "Tu Mensaje",
+      "button": "Enviar Despacho",
+      "successMessage": "¡Gracias por tu mensaje!"
+    },
+    "footer": {
+      "copyright": "&copy; 2025 El Arte de Khid. Todos los derechos reservados."
+    },
+    "detailsPage": {
+      "goBack": "Volver",
+      "comments": "Comentarios",
+      "commentForm": {
+        "namePlaceholder": "Tu Nombre",
+        "commentPlaceholder": "Deja un comentario",
+        "button": "Enviar Comentario"
+      },
+      "viewDetails": "Ver Detalles",
+      "projectNotFound": "Proyecto no encontrado.",
+      "errorLoading": "Error al cargar los detalles del proyecto. Por favor, inténtalo de nuevo más tarde."
+    }
+  }
+}

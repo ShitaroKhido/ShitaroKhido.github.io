@@ -1,0 +1,9 @@
+.vscode/
+.history/
+.idea/
+node_modules/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+*.tmp
+*.log

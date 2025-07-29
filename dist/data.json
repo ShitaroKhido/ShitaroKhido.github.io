@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Project One",
+      "description": "A brief description of the first project. Highlighting the technologies used and the problem it solves.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "link": "#",
+      "image": "https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68"
+    }
+  ],
+  "skills": {
+    "Programming Languages": [
+      "JavaScript (ES6+)",
+      "Bash/Shell Scripting",
+      "Python",
+      "PHP",
+      "SQL"
+    ],
+    "Frameworks & Libraries": [
+      "Vue.js",
+      "Node.js",
+      "Express.js",
+      "Laravel",
+      "WordPress",
+      "Bootstrap",
+      "Tailwind CSS",
+      "jQuery"
+    ],
+    "Databases": [
+      "Oracle Database",
+      "MongoDB",
+      "MySQL"
+    ],
+    "Tools & Platforms": [
+      "Git & GitHub",
+      "Ansible",
+      "Docker",
+      "Linux"
+    ]
+  }
+}

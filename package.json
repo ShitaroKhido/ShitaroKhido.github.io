@@ -1,0 +1,23 @@
+{
+  "name": "pfhost",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && copyfiles -u 1 public/**/* dist && copyfiles details.html dist",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "prettier": "^3.6.2",
+    "vite": "^7.0.6"
+  },
+  "dependencies": {
+    "i18next": "^25.3.2",
+    "i18next-http-backend": "^3.0.2"
+  }
+}

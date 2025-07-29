@@ -1,0 +1,54 @@
+{
+  "site": {
+    "title": "The Khid Kraft",
+    "logo": "The Khid Kraft",
+    "page": {
+      "title": "My Portfolio",
+      "detailsTitle": "Project Details"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Portfolio of a Developer",
+      "subtitle": "A digital playground for my creations and experiments,",
+      "button": "View All Articles"
+    },
+    "sections": {
+      "projects": "Featured Stories",
+      "skills": "Editor's Toolkit",
+      "contact": "Connect with the Author",
+      "about": "About the Author",
+      "allTechnologies": "All Technologies",
+      "searchPlaceholder": "Search stories..."
+    },
+    "aboutSection": {
+      "paragraph": "As a developer, I find joy in creating things with code. This portfolio is less of a formal showcase and more of a personal playground for my projects. I built these for fun and to learn new things. I hope you enjoy exploring them as much as I enjoyed building them."
+    },
+    "contactForm": {
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Your Email",
+      "messagePlaceholder": "Your Message",
+      "button": "Send Dispatch",
+      "successMessage": "Thank you for your message!"
+    },
+    "footer": {
+      "copyright": "&copy; 2025 The Khid Kraft. All Rights Reserved."
+    },
+    "detailsPage": {
+      "goBack": "Go Back",
+      "comments": "Comments",
+      "commentForm": {
+        "namePlaceholder": "Your Name",
+        "commentPlaceholder": "Leave a comment",
+        "button": "Submit Comment"
+      },
+      "viewDetails": "View Details",
+      "projectNotFound": "Project not found.",
+      "errorLoading": "Error loading project details. Please try again later."
+    }
+  }
+}

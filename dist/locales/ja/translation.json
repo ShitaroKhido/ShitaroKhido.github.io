@@ -1,0 +1,54 @@
+{
+  "site": {
+    "title": "キッドクラフト",
+    "logo": "キッドクラフト",
+    "page": {
+      "title": "私のポートフォリオ",
+      "detailsTitle": "プロジェクト詳細"
+    },
+    "nav": {
+      "home": "ホーム",
+      "about": "概要",
+      "projects": "プロジェクト",
+      "contact": "連絡先"
+    },
+    "hero": {
+      "title": "開発者のポートフォリオ",
+      "subtitle": "私の創造物と実験のためのデジタルプレイグラウンド、",
+      "button": "すべての記事を表示"
+    },
+    "sections": {
+      "projects": "注目のストーリー",
+      "skills": "編集者のツールキット",
+      "contact": "作者に連絡する",
+      "allTechnologies": "すべての技術",
+      "about": "著者について",
+      "searchPlaceholder": "ストーリーを検索..."
+    },
+    "aboutSection": {
+      "paragraph": "開発者として、私はコードで物を作ることに喜びを感じます。このポートフォリオは、正式なショーケースというよりも、私のプロジェクトのための個人的な遊び場です。私は楽しみのために、そして新しいことを学ぶためにこれらを構築しました。私がそれらを構築するのを楽しんだのと同じくらい、あなたがそれらを探索するのを楽しんでくれることを願っています。"
+    },
+    "contactForm": {
+      "namePlaceholder": "あなたの名前",
+      "emailPlaceholder": "あなたのメールアドレス",
+      "messagePlaceholder": "あなたのメッセージ",
+      "button": "ディスパッチを送信",
+      "successMessage": "メッセージありがとうございます！"
+    },
+    "footer": {
+      "copyright": "&copy; 2025 キッドクラフト. 全著作権所有."
+    },
+    "detailsPage": {
+      "goBack": "戻る",
+      "comments": "コメント",
+      "commentForm": {
+        "namePlaceholder": "あなたの名前",
+        "commentPlaceholder": "コメントを残す",
+        "button": "コメントを送信"
+      },
+      "viewDetails": "詳細を表示",
+      "projectNotFound": "プロジェクトが見つかりません。",
+      "errorLoading": "プロジェクトの詳細の読み込み中にエラーが発生しました。後でもう一度お試しください。"
+    }
+  }
+}
