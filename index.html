@@ -1,115 +1,654 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khid Pagna | Software Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Merriweather:wght@400;700&family=Oswald:wght@700&family=Roboto+Mono&display=swap"
-    rel="stylesheet" />
-  <script type="module" crossorigin src="./assets/main-CmftLW-R.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/i18n-CjCvs0Mn.js">
-  <link rel="stylesheet" crossorigin href="./assets/i18n-XWM1vxaY.css">
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <!-- Lucide Icons Script -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --gold: #c5a059;
+      --dark-gold: #8a6d3b;
+      --deep-sea: #0a1a1a;
+      --rust: #4a2c2a;
+      --teal-glow: rgba(0, 255, 200, 0.2);
+    }
+
+    /* Custom Themed Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(10, 26, 26, 0.9);
+      border-left: 1px solid rgba(197, 160, 89, 0.1);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, var(--dark-gold), var(--gold), var(--dark-gold));
+      border-radius: 10px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gold);
+    }
+
+    /* Firefox Support */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) var(--deep-sea);
+    }
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: var(--deep-sea);
+      color: #e0e0e0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Animated Deep Sea Background */
+    .sea-container {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle at 50% 50%, #1a3a3a 0%, #0a1a1a 100%);
+      overflow: hidden;
+    }
+
+    /* Caustic Water Effect */
+    .caustics {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        repeat url('https://www.transparenttextures.com/patterns/asfalt-dark.png'),
+        linear-gradient(45deg, rgba(0, 255, 200, 0.05) 0%, transparent 70%);
+      filter: blur(2px);
+      animation: water-sway 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes water-sway {
+      from {
+        transform: scale(1) translate(0, 0);
+      }
+
+      to {
+        transform: scale(1.1) translate(-2%, -2%);
+      }
+    }
+
+    /* Particulate/Bubble Animation */
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(197, 160, 89, 0.2);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float-up var(--duration) linear infinite;
+    }
+
+    @keyframes float-up {
+      0% {
+        transform: translateY(110vh) translateX(0);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: translateY(-10vh) translateX(20px);
+        opacity: 0;
+      }
+    }
+
+    /* Art Deco Background Pattern */
+    .deco-bg {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(30deg, #0f2a2a 12%, transparent 12.5%, transparent 87%, #0f2a2a 87.5%, #0f2a2a),
+        linear-gradient(150deg, #0f2a2a 12%, transparent 12.5%, transparent 87%, #0f2a2a 87.5%, #0f2a2a),
+        linear-gradient(30deg, #0f2a2a 12%, transparent 12.5%, transparent 87%, #0f2a2a 87.5%, #0f2a2a),
+        linear-gradient(150deg, #0f2a2a 12%, transparent 12.5%, transparent 87%, #0f2a2a 87.5%, #0f2a2a),
+        linear-gradient(60deg, #1a3a3a 25%, transparent 25.5%, transparent 75%, #1a3a3a 75%, #1a3a3a),
+        linear-gradient(60deg, #1a3a3a 25%, transparent 25.5%, transparent 75%, #1a3a3a 75%, #1a3a3a);
+      background-size: 80px 140px;
+      background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .main-frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90vw;
+      height: 85vh;
+      border: 4px double var(--gold);
+      background: rgba(10, 26, 26, 0.9);
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(197, 160, 89, 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+
+    .deco-corner {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 2px solid var(--gold);
+      z-index: 10;
+    }
+
+    .top-left {
+      top: -5px;
+      left: -5px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .top-right {
+      top: -5px;
+      right: -5px;
+      border-left: none;
+      border-bottom: none;
+    }
+
+    .bottom-left {
+      bottom: -5px;
+      left: -5px;
+      border-right: none;
+      border-top: none;
+    }
+
+    .bottom-right {
+      bottom: -5px;
+      right: -5px;
+      border-left: none;
+      border-top: none;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--dark-gold);
+      background: linear-gradient(to bottom, rgba(197, 160, 89, 0.1), transparent);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-btn {
+      background: transparent;
+      border: none;
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-btn i {
+      width: 16px;
+      height: 16px;
+    }
+
+    .nav-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-btn:hover::after,
+    .nav-btn.active::after {
+      width: 80%;
+    }
+
+    .nav-btn.active {
+      text-shadow: 0 0 10px var(--gold);
+    }
+
+    .content-area {
+      flex-grow: 1;
+      position: relative;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-frame {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .section-frame.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      padding: 2rem;
+      border-radius: 4px;
+      max-width: 800px;
+      backdrop-filter: blur(5px);
+      position: relative;
+    }
+
+    .footer-info {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      color: var(--dark-gold);
+      text-transform: uppercase;
+      border-top: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .project-card {
+      border: 1px solid var(--dark-gold);
+      padding: 1.5rem;
+      transition: all 0.3s;
+      cursor: pointer;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .project-card:hover {
+      background: rgba(197, 160, 89, 0.1);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .project-card i {
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .skill-item i {
+      color: var(--gold);
+    }
+
+    /* Mobile specific adjustments */
+    @media (max-width: 768px) {
+      .main-frame {
+        width: 95vw;
+        height: 95vh;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+      }
+
+      nav {
+        gap: 0.2rem;
+        flex-wrap: wrap;
+      }
+
+      .nav-btn {
+        font-size: 0.7rem;
+        padding: 0.3rem;
+      }
+
+      .nav-btn span {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="hero-wrapper">
+
+  <script>
+    const apiKey = "";
+
+    async function fetchInfo() {
+      console.log("Accessing the surface data for Khid Pagna...");
+    }
+
+    window.onload = () => {
+      fetchInfo();
+    };
+  </script>
+
+  <div class="sea-container">
+    <div class="caustics"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+  <div class="deco-bg"></div>
+
+  <div class="main-frame">
+    <div class="deco-corner top-left"></div>
+    <div class="deco-corner top-right"></div>
+    <div class="deco-corner bottom-left"></div>
+    <div class="deco-corner bottom-right"></div>
+
     <header>
-      <div class="container">
-        <div class="logo">The Daily Chronicle</div>
-        <button class="nav-toggle" aria-label="toggle navigation">
-          <span class="hamburger"></span>
-        </button>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <div class="lang-selector">
-            <select id="lang-select">
-              <option value="en">English</option>
-              <option value="km">ភាសាខ្មែរ</option>
-              <option value="es">Español</option>
-              <option value="ru">Русский</option>
-              <option value="ja">日本語</option>
-            </select>
-          </div>
-        </nav>
-      </div>
+      <h1 id="title">Khid Pagna</h1>
+      <p class="text-xs tracking-widest text-yellow-600 uppercase mt-1">Software Engineer • Systems Explorer</p>
     </header>
 
-    <section class="hero">
-      <div class="container hero-container">
-        <div class="hero-content">
-          <h1 data-i18n="site.hero.title">Portfolio of a Developer</h1>
-          <p data-i18n="site.hero.subtitle">
-            A digital playground for my creations and experiments,
+    <nav>
+      <button class="nav-btn active" onclick="showSection('home')">
+        <i data-lucide="home"></i><span>Manifesto</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('work')">
+        <i data-lucide="briefcase"></i><span>Archives</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('skills')">
+        <i data-lucide="zap"></i><span>Plasmids</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('contact')">
+        <i data-lucide="radio"></i><span>Signal</span>
+      </button>
+    </nav>
+
+    <main class="content-area">
+      <section id="home" class="section-frame active">
+        <div class="glass-panel text-center">
+          <div class="mb-4 flex justify-center text-yellow-500">
+            <i data-lucide="anchor" size="40"></i>
+          </div>
+          <h2 class="text-2xl font-serif mb-2 text-yellow-500 uppercase tracking-widest">No Gods or Kings. Only Man.
+          </h2>
+          <div class="h-px w-32 bg-yellow-600 mx-auto mb-6"></div>
+
+          <p class="leading-relaxed mb-6 italic text-sm text-gray-300">
+            "I started from nothing. I explored what I could in the silence of the machine, learning that progress is
+            not given—it is chosen."
           </p>
-          <a href="#about" class="btn" data-i18n="site.hero.button"></a>
-        </div>
-        <div class="hero-visual">
-          <div class="polysphere">
-            <div class="polysphere-plane"></div>
-            <div class="polysphere-plane"></div>
-            <div class="polysphere-plane"></div>
-            <div class="polysphere-plane"></div>
-            <div class="polysphere-plane"></div>
-            <div class="polysphere-plane"></div>
+
+          <p id="personal-bio" class="leading-relaxed mb-8">
+            I am <strong>Khid Pagna</strong>. Where others see a void, I see the blueprint for a new world. As a
+            Software Engineer, I specialize in forging robust digital systems out of the raw materials of logic and
+            code.
+          </p>
+
+          <div class="flex justify-center gap-4">
+            <div class="h-px w-12 bg-yellow-600 self-center"></div>
+            <span class="text-yellow-600 italic uppercase text-[10px] tracking-[0.2em]">Phnom Penh, Cambodia</span>
+            <div class="h-px w-12 bg-yellow-600 self-center"></div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section id="work" class="section-frame">
+        <div class="w-full max-w-4xl overflow-y-auto max-h-[60vh] px-4">
+          <h2 class="text-2xl font-serif mb-6 text-center text-yellow-500 uppercase tracking-widest">Chronicles of
+            Industry</h2>
+          <div class="project-grid">
+            <div class="project-card">
+              <i data-lucide="cpu"></i>
+              <div>
+                <h3 class="font-bold text-yellow-600 uppercase text-xs tracking-widest">NiyAl Data Co Ltd</h3>
+                <p class="text-[10px] mb-2 text-yellow-700">JULY 2024 - PRESENT</p>
+                <p class="text-sm opacity-70">Software Engineer focusing on R&D and solving complex problems through
+                  code.</p>
+              </div>
+            </div>
+            <div class="project-card">
+              <i data-lucide="layout"></i>
+              <div>
+                <h3 class="font-bold text-yellow-600 uppercase text-xs tracking-widest">Dynamo Tech Solutions</h3>
+                <p class="text-[10px] mb-2 text-yellow-700">2023 - 2024</p>
+                <p class="text-sm opacity-70">Web Developer. Developed responsive apps using HTML, SCSS, JS, and Laravel
+                  to WordPress migrations.</p>
+              </div>
+            </div>
+            <div class="project-card">
+              <i data-lucide="database"></i>
+              <div>
+                <h3 class="font-bold text-yellow-600 uppercase text-xs tracking-widest">AMK Microfinance</h3>
+                <p class="text-[10px] mb-2 text-yellow-700">AUG 2023 - NOV 2023</p>
+                <p class="text-sm opacity-70">MIS - System Integration Intern. Ensured synergy of digital systems.</p>
+              </div>
+            </div>
+            <div class="project-card">
+              <i data-lucide="settings"></i>
+              <div>
+                <h3 class="font-bold text-yellow-600 uppercase text-xs tracking-widest">CamTESOL IT Support</h3>
+                <p class="text-[10px] mb-2 text-yellow-700">2024</p>
+                <p class="text-sm opacity-70">Volunteer. Troubleshooting hardware/software for seamless event
+                  operations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section-frame">
+        <div class="glass-panel w-full max-w-2xl overflow-y-auto max-h-[60vh] px-4">
+          <h2 class="text-2xl font-serif mb-8 text-center text-yellow-500 uppercase tracking-widest">Genetic
+            Enhancements</h2>
+          <div class="space-y-4">
+            <!-- AI & Specialized -->
+            <div class="skill-item">
+              <div class="flex justify-between mb-1 text-[10px] uppercase tracking-widest items-center">
+                <span class="flex items-center gap-2"><i data-lucide="brain-circuit" size="14"></i> AI Development &
+                  Prompt Engineering</span>
+                <span class="text-yellow-600">Specialist</span>
+              </div>
+              <div class="h-1 w-full bg-gray-800">
+                <div class="h-full bg-yellow-600 shadow-[0_0_8px_var(--gold)]" style="width: 95%"></div>
+              </div>
+            </div>
+            <!-- Python -->
+            <div class="skill-item">
+              <div class="flex justify-between mb-1 text-[10px] uppercase tracking-widest items-center">
+                <span class="flex items-center gap-2"><i data-lucide="code-2" size="14"></i> Python (Data Science &
+                  AI)</span>
+                <span class="text-yellow-600">Expert</span>
+              </div>
+              <div class="h-1 w-full bg-gray-800">
+                <div class="h-full bg-yellow-600" style="width: 92%"></div>
+              </div>
+            </div>
+            <!-- JavaScript & Node -->
+            <div class="skill-item">
+              <div class="flex justify-between mb-1 text-[10px] uppercase tracking-widest items-center">
+                <span class="flex items-center gap-2"><i data-lucide="binary" size="14"></i> JavaScript & NodeJS</span>
+                <span class="text-yellow-600">Master</span>
+              </div>
+              <div class="h-1 w-full bg-gray-800">
+                <div class="h-full bg-yellow-600" style="width: 90%"></div>
+              </div>
+            </div>
+            <!-- Web Tech -->
+            <div class="skill-item">
+              <div class="flex justify-between mb-1 text-[10px] uppercase tracking-widest items-center">
+                <span class="flex items-center gap-2"><i data-lucide="layers" size="14"></i> PHP, SQL & Bootstrap</span>
+                <span class="text-yellow-600">Advanced</span>
+              </div>
+              <div class="h-1 w-full bg-gray-800">
+                <div class="h-full bg-yellow-600" style="width: 85%"></div>
+              </div>
+            </div>
+            <!-- Security -->
+            <div class="skill-item">
+              <div class="flex justify-between mb-1 text-[10px] uppercase tracking-widest items-center">
+                <span class="flex items-center gap-2"><i data-lucide="shield" size="14"></i> Cyber Security (Burp
+                  Suite)</span>
+                <span class="text-yellow-600">Practitioner</span>
+              </div>
+              <div class="h-1 w-full bg-gray-800">
+                <div class="h-full bg-yellow-600" style="width: 75%"></div>
+              </div>
+            </div>
+            <!-- Version Control -->
+            <div class="skill-item">
+              <div class="flex justify-between mb-1 text-[10px] uppercase tracking-widest items-center">
+                <span class="flex items-center gap-2"><i data-lucide="git-branch" size="14"></i> Git & Project
+                  Management</span>
+                <span class="text-yellow-600">Proficient</span>
+              </div>
+              <div class="h-1 w-full bg-gray-800">
+                <div class="h-full bg-yellow-600" style="width: 88%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-yellow-900/50">
+            <p class="text-[9px] uppercase tracking-[0.2em] text-center text-yellow-700">IBM AI Certified • Associate's
+              in Web Programming • B2 English Proficiency</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-frame">
+        <div class="glass-panel text-center">
+          <h2 class="text-2xl font-serif mb-4 text-yellow-500 uppercase tracking-widest">A Man Chooses...</h2>
+          <p class="mb-8">Would you kindly initiate a transmission via the appropriate channels?</p>
+          <div class="flex flex-col gap-4 items-center">
+            <a href="mailto:khidpagna01@gmail.com"
+              class="flex items-center gap-3 border border-yellow-600 px-8 py-3 hover:bg-yellow-600 hover:text-black transition uppercase tracking-widest text-sm group">
+              <i data-lucide="send" class="group-hover:translate-x-1 transition-transform"></i> Transmit Telegram
+            </a>
+            <div class="flex gap-8 mt-6">
+              <a href="https://www.linkedin.com/in/khid-pagna-b8ab55213" target="_blank"
+                class="text-yellow-600 hover:text-white transition flex flex-col items-center gap-1">
+                <i data-lucide="linkedin"></i>
+                <span class="text-[10px]">LinkedIn</span>
+              </a>
+              <a href="https://github.com/ShitaroKhido"
+                class="text-yellow-600 hover:text-white transition flex flex-col items-center gap-1">
+                <i data-lucide="github"></i>
+                <span class="text-[10px]">GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer-info">
+      Property of Khid Pagna • Established in the Deep 2024
+    </div>
   </div>
 
-  <section id="about" class="about">
-    <div class="container">
-      <h2></h2>
-      <p></p>
-    </div>
-  </section>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
 
-  <section id="skills" class="skill-tree">
-    <div class="container">
-      <h2>Editor's Toolkit</h2>
-      <div class="skill-grid"></div>
-    </div>
-  </section>
+    // Background Particles Generation
+    const particleContainer = document.getElementById('particles');
+    const particleCount = 25;
+    for (let i = 0; i < particleCount; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 4 + 1;
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.setProperty('--duration', (Math.random() * 10 + 10) + 's');
+      p.style.animationDelay = (Math.random() * 10) + 's';
+      particleContainer.appendChild(p);
+    }
 
-  <section id="projects" class="features">
-    <div class="container">
-      <h2>Featured Stories</h2>
-      <div class="controls">
-        <input type="text" id="search" placeholder="Search stories..." />
-        <select id="filter">
-          <option value="all">All Technologies</option>
-        </select>
-      </div>
-      <div class="feature-grid"></div>
-    </div>
-  </section>
+    function showSection(sectionId) {
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+        const textElement = btn.querySelector('span');
+        if (!textElement) return;
+        const text = textElement.innerText.toLowerCase();
+        const map = {
+          home: 'manifesto',
+          work: 'archives',
+          skills: 'plasmids',
+          contact: 'signal'
+        };
+        if (text === map[sectionId]) {
+          btn.classList.add('active');
+        }
+      });
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Connect with the Author</h2>
-      <form>
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn">Send Dispatch</button>
-      </form>
-    </div>
-  </section>
+      document.querySelectorAll('.section-frame').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 The Daily Chronicle. All Rights Reserved.</p>
-    </div>
-  </footer>
-  <script src="./i18n/i18next.min.js"></script>
-  <script src="./i18n/i18nextHttpBackend.min.js"></script>
+    setInterval(() => {
+      const title = document.getElementById('title');
+      if (Math.random() > 0.98) {
+        title.style.opacity = '0.7';
+        setTimeout(() => title.style.opacity = '1', 50);
+      }
+    }, 100);
+  </script>
 </body>
 
 </html>
