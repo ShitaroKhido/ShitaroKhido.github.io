@@ -17,3 +17,5 @@ jobs:
             "text": "🚀 New push to DEV branch\nRepository: ${{ github.repository }}\nAuthor: ${{ github.actor }}\nCommit: ${{ github.event.head_commit.message }}\nURL: https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
           }' \
           ${{ secrets.YOUR_WEBHOOK_URL }}
+
+          
