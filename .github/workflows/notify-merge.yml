@@ -19,26 +19,26 @@ jobs:
             "avatar_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
             "embeds": [
               {
-                "title": "🚀 New Update to dev branch",
+                "title": "New Update to dev branch",
                 "color": 5814783,
                 "fields": [
                   {
-                    "name": "📦 Repository",
+                    "name": "Repository",
                     "value": "${{ github.repository }}",
                     "inline": true
                   },
                   {
-                    "name": "👤 Author",
+                    "name": "Author",
                     "value": "${{ github.actor }}",
                     "inline": true
                   },
                   {
-                    "name": "🌿 Branch",
+                    "name": "Branch",
                     "value": "dev",
                     "inline": true
                   },
                   {
-                    "name": "💬 Commit Message",
+                    "name": "Commit Message",
                     "value": "${{ github.event.head_commit.message }}",
                     "inline": false
                   }
