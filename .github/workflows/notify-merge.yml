@@ -23,43 +23,43 @@ jobs:
             \"username\": \"GitHub Actions\",
             \"avatar_url\": \"https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png\",
             \"embeds\": [{
-              \"title\": \"🚀 Dev Branch Updated\",
-              \"description\": \"A new commit has been pushed to **dev** branch.\",
-              \"color\": 3066993,
+              \"title\": \"Dev Branch Update\",
+              \"description\": \"A new commit has been pushed to the dev branch.\",
+              \"color\": 3447003,
               \"fields\": [
                 {
-                  \"name\": \"📦 Repository\",
+                  \"name\": \"Repository\",
                   \"value\": \"[${{ github.repository }}]($REPO_URL)\",
                   \"inline\": true
                 },
                 {
-                  \"name\": \"🌿 Branch\",
+                  \"name\": \"Branch\",
                   \"value\": \"dev\",
                   \"inline\": true
                 },
                 {
-                  \"name\": \"👤 Author\",
+                  \"name\": \"Author\",
                   \"value\": \"${{ github.actor }}\",
                   \"inline\": true
                 },
                 {
-                  \"name\": \"🔖 Commit\",
+                  \"name\": \"Commit\",
                   \"value\": \"[\`$SHORT_SHA\`]($COMMIT_URL)\",
                   \"inline\": true
                 },
                 {
-                  \"name\": \"💬 Message\",
+                  \"name\": \"Message\",
                   \"value\": \"${{ github.event.head_commit.message }}\",
                   \"inline\": false
                 },
                 {
-                  \"name\": \"🔍 Changes\",
-                  \"value\": \"[View Compare]($COMPARE_URL)\",
+                  \"name\": \"Changes\",
+                  \"value\": \"[View Details]($COMPARE_URL)\",
                   \"inline\": false
                 }
               ],
               \"footer\": {
-                \"text\": \"GitHub Dev Branch • Continuous Integration\"
+                \"text\": \"GitHub • Dev Branch Monitor\"
               },
               \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"
             }]
