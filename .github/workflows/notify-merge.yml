@@ -1,21 +1,53 @@
-name: Notify on Dev Push
+name: Discord Notification on Dev Push
 
 on:
   push:
-    branches: [dev]
+    branches:
+      - dev
 
 jobs:
   notify:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Send webhook
+      - name: Send Discord notification
         run: |
-          curl -X POST \
+          curl -X POST ${{ secrets.DISCORD_WEBHOOK_URL }} \
           -H "Content-Type: application/json" \
           -d '{
-            "text": "🚀 New push to DEV branch\nRepository: ${{ github.repository }}\nAuthor: ${{ github.actor }}\nCommit: ${{ github.event.head_commit.message }}\nURL: https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
-          }' \
-          ${{ secrets.YOUR_WEBHOOK_URL }}
-
-          
+            "username": "GitHub",
+            "avatar_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+            "embeds": [
+              {
+                "title": "🚀 New Update to dev branch",
+                "color": 5814783,
+                "fields": [
+                  {
+                    "name": "📦 Repository",
+                    "value": "${{ github.repository }}",
+                    "inline": true
+                  },
+                  {
+                    "name": "👤 Author",
+                    "value": "${{ github.actor }}",
+                    "inline": true
+                  },
+                  {
+                    "name": "🌿 Branch",
+                    "value": "dev",
+                    "inline": true
+                  },
+                  {
+                    "name": "💬 Commit Message",
+                    "value": "${{ github.event.head_commit.message }}",
+                    "inline": false
+                  }
+                ],
+                "url": "https://github.com/${{ github.repository }}/commit/${{ github.sha }}",
+                "footer": {
+                  "text": "GitHub Dev Branch Monitor"
+                },
+                "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'"
+              }
+            ]
+          }'
